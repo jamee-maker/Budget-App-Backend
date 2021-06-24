@@ -1,6 +1,6 @@
 // Dependencies
 const express = require("express");
-const budgetsController = require("./controllers/budgetsController");
+const transactionsController = require("./controllers/transactionsController");
 const cors = require("cors");
 
 // Configuration
@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
   res.send(`<h1>Welcome to the Budget App back-end</h1>`);
 });
 
-app.use("/budgets", budgetsController);
+app.use("/transactions", transactionsController);
 
 app.get("*", (req, res) => {
   res.status(404).send("Page not found");
