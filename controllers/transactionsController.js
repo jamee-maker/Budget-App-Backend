@@ -34,6 +34,7 @@ transactions.delete("/:arrayIndex", (req, res) => {
 
 transactions.put("/:arrayIndex", (req, res) => {
   transactionsArray[Number(req.params.arrayIndex)] = req.body;
+  let arrayIndex = Number(req.params.arrayIndex);
   if (arrayIndex < transactionsArray.length) {
     res.status(200).json(transactionsArray[Number(req.params.arrayIndex)]);
   } else {
